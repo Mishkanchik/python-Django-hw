@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Створити новину{% endblock %}
+
+{% block content %}
+<h2>Створити новину</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Опублікувати</button>
+    <a href="{% url 'polls:post_list' %}" class="btn btn-secondary">Назад</a>
+</form>
+
+{% endblock %}

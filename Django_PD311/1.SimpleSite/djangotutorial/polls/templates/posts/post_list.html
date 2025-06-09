@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Новини{% endblock %}
+
+{% block content %}
+<h2>Новини</h2>
+
+{% if user.is_authenticated %}
+    <p><a class="btn btn-primary" href="{% url 'polls:create_post' %}">Створити новину</a></p>
+{% else %}
+    <p>Щоб створити новину, будь ласка, <a href="{% url 'polls:login' %}">увійдіть</a> в систему.</p>
+{% endif %}
+
+{% for post in posts %}
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.content }}</p>
+        <div class="d-flex align-items-center">
+            {% if post.author.image_small %}
+                <img src="{{ post.author.image_small.url }}" alt="Фото автора" class="rounded-circle me-2" style="width:40px; height:40px;">
+            {% else %}
+                <div class="rounded-circle bg-secondary me-2" style="width:40px; height:40px;"></div>
+            {% endif %}
+            <small class="text-muted">{{ post.author.first_name }} {{ post.author.last_name }} &mdash; {{ post.created_at|date:"d.m.Y H:i" }}</small>
+        </div>
+    </div>
+</div>
+{% empty %}
+<p>Новин поки що немає.</p>
+{% endfor %}
+{% endblock %}
