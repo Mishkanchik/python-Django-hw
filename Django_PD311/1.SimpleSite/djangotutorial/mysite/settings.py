@@ -84,8 +84,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'neondb',
         'USER': 'neondb_owner',
-        'PASSWORD': 'npg_iLfSFeT5JU3p',
-        'HOST': 'ep-spring-paper-a4wo5c5l-pooler.us-east-1.aws.neon.tech',
+        'PASSWORD': 'npg_TcW7BPtrMbw4',
+        'HOST': 'ep-wild-meadow-a49d69tl-pooler.us-east-1.aws.neon.tech',
         'PORT': 5432,
     }
 }
