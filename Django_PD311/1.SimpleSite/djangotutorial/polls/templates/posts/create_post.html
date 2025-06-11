@@ -59,4 +59,16 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.tiny.cloud/1/h2guglgu1xzuda4suc5bgo3jog9x2ufnh0m7h8dbun2dexi6/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+    selector: '#id_content',
+    height: 300,
+    menubar: false,
+    plugins: 'link image code lists',
+    toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist | link image | code',
+    language: 'uk'
+  });
+</script>
+
 {% endblock %}
